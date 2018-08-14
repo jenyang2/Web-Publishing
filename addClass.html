@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+   <head>
+      <title>addClass</title>
+      <style>
+         .box
+         {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+         }
+         .box.on
+         {
+            background:red;
+            width: 800px;
+         }
+         .menu
+         {
+            list-style: none;
+            text-align: center;
+         }
+         .li
+         {
+            width:30px;
+            height: 30px;
+            background: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+         }
+         
+         li.on{
+            background: #000;
+            
+         }
+      </style>
+   </head>
+   <body>
+      <div class="box"></div>
+      <button class="remove">제거</button>
+      
+      <ul class="menu">
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         
+      </ul>
+   </body>
+</html>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script>
+   /*
+   addClass() 클래스 추가
+   removeClass() 클래스 제거
+   
+   removeClass('name') name이라는 클래스 제거
+   removeClass() 모든 클래스 제거
+   
+   <div class="name name1 name2 name3">
+   여기서 name1, name2, name3을 다 지울때!
+   -> removeClass('name1 name2 name3')
+   
+   toggleClass() 클래스 추가와 제거를 한번에 (토글: 뗐다 붙엿다)
+   */
+   $('.box').on('click', function(){
+     $(this).addClass('on');  // 클래스 on 추가
+   }) 
+   $('.remove').on('click', function(){
+     // $('.box').removeClass(); 모든 클래스 삭제
+      $('.box').removeClass('on'); // 클래스 on삭제
+   })  
+   
+   
+   $('li').on('click', function(){
+      $(this).addClass('on');
+   })
+</script>
