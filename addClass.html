@@ -19,7 +19,7 @@
             list-style: none;
             text-align: center;
          }
-         .li
+         li
          {
             width:30px;
             height: 30px;
@@ -76,8 +76,11 @@
       $('.box').removeClass('on'); // 클래스 on삭제
    })  
    
-   
    $('li').on('click', function(){
       $(this).addClass('on');
+      $(this).siblings().removeClass('on');
    })
+   
+   
+   
 </script>
