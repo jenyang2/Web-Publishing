@@ -19,13 +19,103 @@
             */             
             color:inherit;}
          ul{list-style: none;}
+         
          header{
             width:100%;
             height: 50px;
             background: #333;
             color:#f0f0f0;
+          /*  z-index: 500;
+            position: relative;*/
          }
          h1{
+            text-align: center;
+         }
+         .allBtn{
+            background: #000;
+            position: absolute;
+            left:0;
+            top:0;
+            padding:20px;
+         }
+         .allBtn span{
+            width: 17px;
+            height: 2px;
+            background: #eee;
+            /* span=inline 너비 줄수없음.-> block으로 바꿈 */
+            display:block;
+            margin-bottom: 2px;
+         }
+         .allBtn span:nth-child(3){
+            margin-bottom: 0;
+         }
+         body{
+            height: 3000px;
+         }
+         .allMenu{
+            position: fixed;  /* 브라우저 모델, 고정된 창 */
+            width: 100%; 
+            height: 100%; /* 부모태그가 일정한 값을 가지고있어야함  */
+            left: -100%;
+            top:0;
+            /* 꽉찬 슬라이드 100vh -> height: 100vh; 
+               윈도우11 미만 안됨 : 100vh의 한계 */
+            background: rgba(0,0,0,0.6);
+         }
+         .allMenu ul{margin-top: 50px;}
+         .allMenu li{
+            border-bottom: 1px solid #aaa;
+            height: 30px;
+            line-height: 30px;
+         }
+         
+         .allMenu .close{
+            background: rgba(0,0,0,0.8);
+            width:50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            top:0;
+            right: 0;
+         }
+         .subBtn{
+            width: 50px;
+            height: 50px;
+            background: #000;
+            position: absolute;
+            right: 0;
+            top:0;
+         }
+         .subBtn span{
+            transform: rotate(-45deg);
+            position: absolute;
+            left: 50%;
+            margin-left: -7.5px;
+            top:50%;
+            margin-top:-10px;
+            width: 15px;
+            height: 15px;
+            display: block;
+            border-bottom: 1px solid #eee;
+            border-left:1px solid #eee;
+         }
+         .subMenu{
+            background: #000;
+            width: 100%;
+            position: absolute;
+            top:50px;
+            left: 0;
+         }
+         /* text 추가하기위한 가상 구조 */
+         .subMenu ul:after{
+            content: '';
+            clear: both; /* inline 요소한테만 먹힘 */
+            display: block;
+         }
+         .subMenu li{
+            width:33.33%;
+            float: left;
             text-align: center;
          }
       </style>
@@ -42,15 +132,15 @@
             <span></span>
          </div>
          <nav class="allMenu">
-         <div class="close">close</div>
-            <ul>
-               <li><a href="#">menu1</a></li>
-               <li><a href="#">menu2</a></li>
-               <li><a href="#">menu3</a></li>
-               <li><a href="#">menu4</a></li>
-               <li><a href="#">menu5</a></li>
-               <li><a href="#">menu6</a></li>
-            </ul>
+            <div class="close">close</div>
+               <ul>
+                  <li><a href="#">menu1</a></li>
+                  <li><a href="#">menu2</a></li>
+                  <li><a href="#">menu3</a></li>
+                  <li><a href="#">menu4</a></li>
+                  <li><a href="#">menu5</a></li>
+                  <li><a href="#">menu6</a></li>
+               </ul>
          </nav><!-- allMenu-->
          <div class="subMenu">
             <ul>
@@ -66,5 +156,10 @@
             </ul>
          </div>
       </header>
+
    </body>
 </html>
+<script src=""></script>
+<script src=""></script>
+<script>
+</script>
